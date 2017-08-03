@@ -1,0 +1,22 @@
+{
+  "name": "@articulate/request",
+  "version": "0.0.0",
+  "description": "Rest client that Boom's nicely",
+  "main": "index.js",
+  "author": "articulate",
+  "license": "UNLICENSED",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "boom": "^5.2.0",
+    "joi": "^10.6.0",
+    "media-typer": "^0.3.0",
+    "qs": "^6.5.0",
+    "ramda": "^0.24.1",
+    "raw-body": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0"
+  }
+}

@@ -1,0 +1,9 @@
+*.log
+.DS_Store
+.eslintrc.js
+.gitignore
+docs
+node_modules
+README.md
+test
+yarn.lock
