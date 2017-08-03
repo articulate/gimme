@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Rest client that Boom's nicely",
   "main": "index.js",
+  "repository": "git@github.com:articulate/request.git",
   "author": "articulate",
   "license": "UNLICENSED",
   "scripts": {
