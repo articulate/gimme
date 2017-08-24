@@ -3,11 +3,12 @@ const http         = require('http')
 const Joi          = require('joi')
 const { validate } = require('@articulate/funky')
 
-const send = require('./lib/send')
+const gimme = require('./lib/gimme')
 
 const schema = Joi.object({
   data:        Joi.any(),
   deserialize: Joi.func(),
+  headers:     Joi.object(),
   json:        Joi.boolean(),
   jwt:         Joi.string(),
   method:      Joi.string().valid(http.METHODS),
@@ -16,6 +17,4 @@ const schema = Joi.object({
   url:         Joi.string().required()
 })
 
-const request = composeP(send, validate(schema))
-
-module.exports = request
+module.exports = composeP(gimme, validate(schema))
