@@ -1,9 +1,9 @@
 # API
 
 - [`gimme`](#gimme)
-  - [`Response` object](#response-object)
-  - [JSON by default](#json-by-default)
-  - [Streaming the response](#streaming-the-response)
+- [`Response` object](#response-object)
+- [JSON by default](#json-by-default)
+- [Streaming the response](#streaming-the-response)
 
 ### gimme
 
