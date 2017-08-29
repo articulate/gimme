@@ -23,6 +23,7 @@ beforeEach(() => {
   nock(surl).get('/').query(true).reply(respond('GET'))
   nock(url).get('/').query(true).reply(respond('GET'))
   nock(url).post('/').query(true).reply(respond('POST'))
+  nock(url).get('/error').query(true).reply(400, {})
 })
 
 afterEach(() =>
