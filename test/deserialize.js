@@ -23,23 +23,13 @@ describe('deserialize', () => {
     })
   })
 
-  describe('when absent', () => {
-    beforeEach(() =>
-      gimme({ url }).then(res)
-    )
-
-    it('defaults to `JSON.parse`', () =>
-      expect(res().body.uri).to.equal('/')
-    )
-  })
-
   describe('when supplied', () => {
     beforeEach(() =>
       gimme({ deserialize: identity, url }).then(res)
     )
 
     it('deserializes correctly', () =>
-      expect(res().body).to.equal('{"body":"","headers":{"content-type":"application/json","host":"articulate.com"},"query":{},"uri":"/"}')
+      expect(res().body).to.equal('{"body":"","headers":{"content-type":"application/json","host":"articulate.com"},"method":"GET","query":{},"uri":"/"}')
     )
   })
 })
