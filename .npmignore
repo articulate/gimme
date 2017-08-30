@@ -1,9 +1,11 @@
 *.log
+*.md
 .DS_Store
 .eslintrc.js
 .gitignore
-docs
-node_modules
-README.md
-test
+.npmrc
+/.nyc_output
+/docs
+/node_modules
+/test
 yarn.lock
