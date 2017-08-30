@@ -4,6 +4,7 @@
 .eslintrc.js
 .gitignore
 .npmrc
+.travis.yml
 /.nyc_output
 /docs
 /node_modules
