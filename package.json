@@ -18,7 +18,8 @@
     "lint": "eslint .",
     "postversion": "git push --tags origin master",
     "preversion": "git checkout master",
-    "test": "yarn run lint && yarn run test:coverage",
+    "test": "mocha test --reporter=dot",
+    "test:ci": "yarn run lint && yarn run test:coverage",
     "test:coverage": "nyc mocha test --reporter=dot"
   },
   "dependencies": {
