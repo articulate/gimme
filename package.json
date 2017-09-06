@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:articulate/gimme.git",
   "author": "articulate",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "nyc": {
     "check-coverage": true,
     "lines": 100,
@@ -23,7 +23,7 @@
     "test:coverage": "nyc mocha test --reporter=dot"
   },
   "dependencies": {
-    "@articulate/funky": "^0.0.1",
+    "@articulate/funky": "^0.0.2",
     "boom": "^5.2.0",
     "joi": "^10.6.0",
     "media-typer": "^0.3.0",
