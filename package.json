@@ -14,13 +14,13 @@
     "branches": 100
   },
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint .",
     "postversion": "git push --tags origin master",
     "preversion": "git checkout master",
     "test": "mocha test --reporter=dot",
-    "test:ci": "yarn run lint && yarn run test:coverage",
-    "test:coverage": "nyc mocha test --reporter=dot"
+    "test:ci": "yarn lint && yarn test:coverage && yarn coverage",
+    "test:coverage": "nyc yarn test"
   },
   "dependencies": {
     "@articulate/funky": "^0.0.2",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.1",
+    "coveralls": "^2.13.1",
     "eslint": "^4.3.0",
     "mocha": "^3.5.0",
     "nock": "^9.0.14",
