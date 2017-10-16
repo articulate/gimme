@@ -30,6 +30,7 @@ beforeEach(() => {
   nock(url).get('/').query(true).reply(respond('GET'))
   nock(url).post('/').query(true).reply(respond('POST'))
   nock(url).get('/error').query(true).reply(400)
+  nock(url).get('/no-length').query(true).reply(200, { foo: 'bar' })
 })
 
 afterEach(() =>

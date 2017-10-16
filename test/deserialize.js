@@ -32,4 +32,15 @@ describe('deserialize', () => {
       expect(res().body).to.equal('{"body":"","headers":{"content-type":"application/json","host":"articulate.com"},"method":"GET","query":{},"uri":"/"}')
     )
   })
+
+  describe('when response has no content-length', () => {
+    beforeEach(() =>
+      gimme({ deserialize: identity, url: `${url}/no-length` }).then(res)
+    )
+
+    it('still parses and deserializes the body', () => {
+      expect(res().body).to.equal('{"foo":"bar"}')
+      expect(res().headers['content-length']).to.be.undefined
+    })
+  })
 })
