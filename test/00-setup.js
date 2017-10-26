@@ -4,8 +4,11 @@ const URL  = require('url')
 
 const { curry, compose, prop } = require('ramda')
 
-const surl = exports.surl = 'https://articulate.com'
-const url  = exports.url  = 'http://articulate.com'
+const portly = 'http://ported.com:1234'
+const surl   = 'https://secure.com'
+const url    = 'http://regular.com'
+
+Object.assign(exports, { portly, surl, url })
 
 const parseQuery = compose(qs.parse, prop('query'), URL.parse)
 
@@ -25,7 +28,10 @@ const respond = curry(function(method, uri, body) {
   return [ 200, resBody, headers ]
 })
 
+nock.disableNetConnect()
+
 beforeEach(() => {
+  nock(portly).get('/').query(true).reply(respond('GET'))
   nock(surl).get('/').query(true).reply(respond('GET'))
   nock(url).get('/').query(true).reply(respond('GET'))
   nock(url).post('/').query(true).reply(respond('POST'))
