@@ -29,7 +29,7 @@ describe('deserialize', () => {
     )
 
     it('deserializes correctly', () =>
-      expect(res().body).to.equal('{"body":"","headers":{"content-type":"application/json","host":"articulate.com"},"method":"GET","query":{},"uri":"/"}')
+      expect(res().body).to.equal('{"body":"","headers":{"content-type":"application/json","host":"regular.com"},"method":"GET","query":{},"uri":"/"}')
     )
   })
 

@@ -2,8 +2,8 @@ const { expect } = require('chai')
 const property   = require('prop-factory')
 const URL        = require('url')
 
-const gimme         = require('..')
-const { surl, url } = require('./00-setup')
+const gimme = require('..')
+const { portly, surl, url } = require('./00-setup')
 
 describe('data', () => {
   const res  = property()
@@ -57,6 +57,19 @@ describe('data', () => {
     )
 
     it('supports that too', () => {
+      expect(res().body.uri).to.equal('/')
+      expect(res().body.headers['host']).to.equal(parts.host)
+    })
+  })
+
+  describe('when port included', () => {
+    const parts = URL.parse(portly)
+
+    beforeEach(() =>
+      gimme({ url: portly }).then(res)
+    )
+
+    it('handles the port correctly', () => {
       expect(res().body.uri).to.equal('/')
       expect(res().body.headers['host']).to.equal(parts.host)
     })
