@@ -13,16 +13,6 @@ describe('data', () => {
     res(undefined)
   })
 
-  describe('when method is GET', () => {
-    beforeEach(() =>
-      gimme({ data, url }).then(res)
-    )
-
-    it('serializes it as query params', () =>
-      expect(res().body.query).to.eql(data)
-    )
-  })
-
   describe('when method is not GET', () => {
     describe('and data is not a stream', () => {
       beforeEach(() =>

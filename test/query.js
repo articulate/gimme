@@ -22,14 +22,6 @@ describe('query', () => {
           expect(res().body.query).to.eql(query)
         })
     )
-
-    it('serializes `data` as query params when `query` is not defined', () =>
-      gimme({ data, url })
-        .then(result => {
-          res(result)
-          expect(res().body.query).to.eql(data)
-        })
-    )
   })
 
   describe('when method is not GET', () => {
