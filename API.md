@@ -28,6 +28,7 @@ The following params are accepted:
 | `serialize` | `Function` | [`JSON.parse`](http://devdocs.io/javascript/global_objects/json/parse) | function with which to serialize the request body |
 | `stream` | `Boolean` | `false` | if `true`, the response `body` will be a [`stream.Readable`](http://devdocs.io/node/stream#stream_class_stream_readable) |
 | `url` | `String` | | **required:** the `url` of the request |
+| `query` | `Object` | | data to serialize and append to the url as a query string |
 
 #### `Response` object
 
