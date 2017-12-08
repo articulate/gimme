@@ -1,6 +1,6 @@
 {
   "name": "@articulate/gimme",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Rest client that goes :boom:",
   "main": "index.js",
   "repository": "git@github.com:articulate/gimme.git",
