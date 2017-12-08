@@ -14,7 +14,8 @@ const schema = Joi.object({
   method:      Joi.string().valid(http.METHODS),
   serialize:   Joi.func(),
   stream:      Joi.boolean(),
-  url:         Joi.string().required()
+  url:         Joi.string().required(),
+  query:       Joi.any(),
 })
 
 module.exports = composeP(gimme, validate(schema))
