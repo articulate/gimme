@@ -16,7 +16,7 @@ const schema = Joi.object({
   serialize:   Joi.func(),
   stream:      Joi.boolean(),
   url:         Joi.string().required(),
-  query:       Joi.any(),
+  query:       Joi.object(),
 })
 
 module.exports = composeP(gimme, validate(schema))
