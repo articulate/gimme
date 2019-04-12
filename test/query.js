@@ -7,7 +7,7 @@ const { url } = require('./00-setup')
 
 describe('query', () => {
   const query = { foo: 'bar' }
-  const data  = { baz: 'bop' }
+  const body  = { baz: 'bop' }
   const res   = property()
 
   beforeEach(() => {
@@ -15,34 +15,34 @@ describe('query', () => {
   })
 
   describe('when method is GET', () => {
+    beforeEach(() =>
+      gimme({ query, body, url }).then(res)
+    )
+
     it('serializes `query` as query params', () =>
-      gimme({ query, data, url })
-        .then(result => {
-          res(result)
-          expect(res().body.query).to.eql(query)
-        })
+      expect(res().body.query).to.eql(query)
     )
   })
 
   describe('when method is not GET', () => {
-    describe('and data is not a stream', () => {
+    describe('and body is not a stream', () => {
       beforeEach(() =>
-        gimme({ data, query, method: 'POST', url }).then(res)
+        gimme({ body, query, method: 'POST', url }).then(res)
       )
 
       it('serializes it in the request body', () => {
         expect(res().body.query).to.eql(query)
-        expect(res().body.body).to.eql(data)
+        expect(res().body.body).to.eql(body)
       })
     })
 
-    describe('and data is a stream', () => {
-      const data  = new stream.PassThrough()
-      const value = 'some streamed data'
+    describe('and body is a stream', () => {
+      const body  = new stream.PassThrough()
+      const value = 'some streamed body'
 
       beforeEach(() => {
         const promise = gimme({
-          data,
+          body,
           query,
           deserialize: JSON.parse,
           json: false,
@@ -50,11 +50,11 @@ describe('query', () => {
           url
         }).then(res)
 
-        data.end(value)
+        body.end(value)
         return promise
       })
 
-      it('pipes the data into the request', () => {
+      it('pipes the body into the request', () => {
         expect(res().body.query).to.eql(query)
         expect(res().body.body).to.equal(value)
       })

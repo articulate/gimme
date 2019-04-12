@@ -6,7 +6,8 @@ const { validate } = require('@articulate/funky')
 const gimme = require('./lib/gimme')
 
 const schema = Joi.object({
-  data:        Joi.any(),
+  body:        Joi.any(),
+  data:        Joi.any(), // deprecated
   deserialize: Joi.func(),
   headers:     Joi.object(),
   json:        Joi.boolean(),

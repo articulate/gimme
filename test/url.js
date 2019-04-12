@@ -5,7 +5,7 @@ const URL        = require('url')
 const gimme = require('..')
 const { portly, surl, url } = require('./00-setup')
 
-describe('data', () => {
+describe('url', () => {
   const res  = property()
 
   beforeEach(() => {

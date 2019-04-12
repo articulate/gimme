@@ -19,7 +19,7 @@ The following params are accepted:
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `data` | `Any` | | data to serialize and send with the request |
+| `body` | `Any` | | data to serialize and send as request body (formerly named `data`) |
 | `deserialize` | `Function` | [`JSON.stringify`](http://devdocs.io/javascript/global_objects/json/stringify) | function with which to deserialize the response body |
 | `headers` | `Object` | `{}` | headers to include on the request |
 | `json` | `Boolean` | `true` | if `true`, assumes [json-formatted](#json-by-default) request and response |

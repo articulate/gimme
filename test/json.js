@@ -33,14 +33,14 @@ describe('json', () => {
   })
 
   describe('when false', () => {
-    const data = 'just a string'
+    const body = 'just a string'
 
     beforeEach(() =>
-      gimme({ data, json: false, method: 'POST', url }).then(res)
+      gimme({ body, json: false, method: 'POST', url }).then(res)
     )
 
     it('does not serialize as JSON', () =>
-      expect(JSON.parse(res().body).body).to.equal(data)
+      expect(JSON.parse(res().body).body).to.equal(body)
     )
 
     it('does not deserialize as JSON', () =>
@@ -53,14 +53,14 @@ describe('json', () => {
   })
 
   describe('when true', () => {
-    const data = { foo: 'bar' }
+    const body = { foo: 'bar' }
 
     beforeEach(() =>
-      gimme({ data, json: true, method: 'POST', url }).then(res)
+      gimme({ body, json: true, method: 'POST', url }).then(res)
     )
 
     it('serializes as JSON', () =>
-      expect(res().body.body).to.eql(data)
+      expect(res().body.body).to.eql(body)
     )
 
     it('deserializes as JSON', () =>
