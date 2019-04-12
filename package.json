@@ -25,6 +25,7 @@
   "dependencies": {
     "@articulate/funky": "^1.6.0",
     "boom": "^7.3.0",
+    "chalk": "^2.4.2",
     "joi": "^14.3.1",
     "media-typer": "^1.0.1",
     "qs": "^6.7.0",
