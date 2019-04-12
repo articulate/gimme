@@ -1,6 +1,5 @@
 const { expect } = require('chai')
 const property   = require('prop-factory')
-const stream     = require('stream')
 
 const gimme   = require('..')
 const { url } = require('./00-setup')
