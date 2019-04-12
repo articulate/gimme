@@ -32,6 +32,7 @@
     "raw-body": "^2.2.0"
   },
   "devDependencies": {
+    "@articulate/spy": "^0.0.1",
     "chai": "^4.1.1",
     "coveralls": "^2.13.1",
     "eslint": "^4.3.0",
