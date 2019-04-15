@@ -6,7 +6,7 @@ const gimme   = require('..')
 const { url } = require('./00-setup')
 
 describe('serialize', () => {
-  const data      = 'some data'
+  const body      = 'some body'
   const serialize = toUpper
   const res       = property()
 
@@ -28,7 +28,7 @@ describe('serialize', () => {
   describe('when supplied', () => {
     beforeEach(() =>
       gimme({
-        data,
+        body,
         deserialize: JSON.parse,
         json: false,
         method: 'POST',
@@ -37,8 +37,8 @@ describe('serialize', () => {
       }).then(res)
     )
 
-    it('serializes the data correctly', () =>
-      expect(res().body.body).to.equal(serialize(data))
+    it('serializes the body correctly', () =>
+      expect(res().body.body).to.equal(serialize(body))
     )
   })
 })

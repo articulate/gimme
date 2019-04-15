@@ -4,7 +4,7 @@ const property   = require('prop-factory')
 const gimme   = require('..')
 const { url } = require('./00-setup')
 
-describe('data', () => {
+describe('stream', () => {
   const res = property()
 
   beforeEach(() => {

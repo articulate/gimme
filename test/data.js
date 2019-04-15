@@ -1,49 +1,26 @@
 const { expect } = require('chai')
 const property   = require('prop-factory')
-const stream     = require('stream')
 
 const gimme   = require('..')
 const { url } = require('./00-setup')
 
 describe('data', () => {
-  const data = { foo: 'bar' }
-  const res  = property()
+  const body  = { baz: 'bop' }
+  const res   = property()
 
   beforeEach(() => {
     res(undefined)
   })
 
-  describe('when method is not GET', () => {
-    describe('and data is not a stream', () => {
-      beforeEach(() =>
-        gimme({ data, method: 'POST', url }).then(res)
-      )
+  beforeEach(() =>
+    gimme({ data: body, method: 'POST', url }).then(res)
+  )
 
-      it('serializes it in the request body', () =>
-        expect(res().body.body).to.eql(data)
-      )
-    })
+  it('is used for non-GET request body', () =>
+    expect(res().body.body).to.eql(body)
+  )
 
-    describe('and data is a stream', () => {
-      const data  = new stream.PassThrough()
-      const value = 'some streamed data'
-
-      beforeEach(() => {
-        const promise = gimme({
-          data,
-          deserialize: JSON.parse,
-          json: false,
-          method: 'POST',
-          url
-        }).then(res)
-
-        data.end(value)
-        return promise
-      })
-
-      it('pipes the data into the request', () =>
-        expect(res().body.body).to.equal(value)
-      )
-    })
-  })
+  it('is deprecated', () =>
+    expect(console.warn.calls[0][0]).to.include('deprecated')
+  )
 })

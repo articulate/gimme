@@ -6,7 +6,8 @@ const { validate } = require('@articulate/funky')
 const gimme = require('./lib/gimme')
 
 const schema = Joi.object({
-  data:        Joi.any(),
+  body:        Joi.any(),
+  data:        Joi.any(), // deprecated
   deserialize: Joi.func(),
   headers:     Joi.object(),
   json:        Joi.boolean(),
@@ -15,7 +16,7 @@ const schema = Joi.object({
   serialize:   Joi.func(),
   stream:      Joi.boolean(),
   url:         Joi.string().required(),
-  query:       Joi.any(),
+  query:       Joi.object(),
 })
 
 module.exports = composeP(gimme, validate(schema))

@@ -23,15 +23,17 @@
     "test:coverage": "nyc yarn test"
   },
   "dependencies": {
-    "@articulate/funky": "^0.0.2",
-    "boom": "^5.2.0",
-    "joi": "^10.6.0",
-    "media-typer": "^0.3.0",
-    "qs": "^6.5.0",
-    "ramda": "^0.24.1",
-    "raw-body": "^2.2.0"
+    "@articulate/funky": "^1.6.0",
+    "boom": "^7.3.0",
+    "chalk": "^2.4.2",
+    "joi": "^14.3.1",
+    "media-typer": "^1.0.1",
+    "qs": "^6.7.0",
+    "ramda": "^0.26.1",
+    "raw-body": "^2.3.3"
   },
   "devDependencies": {
+    "@articulate/spy": "^0.0.1",
     "chai": "^4.1.1",
     "coveralls": "^2.13.1",
     "eslint": "^4.3.0",

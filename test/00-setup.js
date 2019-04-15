@@ -1,5 +1,6 @@
 const nock = require('nock')
 const qs   = require('qs')
+const spy  = require('@articulate/spy')
 const URL  = require('url')
 
 const { curry, compose, prop } = require('ramda')
@@ -28,6 +29,7 @@ const respond = curry(function(method, uri, body) {
   return [ 200, resBody, headers ]
 })
 
+console.warn = spy()
 nock.disableNetConnect()
 
 beforeEach(() => {
