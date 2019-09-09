@@ -19,16 +19,18 @@ The following params are accepted:
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
+| `agent` | [`Agent`](https://devdocs.io/node/http#http_class_http_agent) | | optional shared agent to [manage connection persistence](https://devdocs.io/node/http#http_class_http_agent) |
 | `body` | `Any` | | data to serialize and send as the request body |
 | `deserialize` | `Function` | [`JSON.stringify`](http://devdocs.io/javascript/global_objects/json/stringify) | function with which to deserialize the response body |
 | `headers` | `Object` | `{}` | headers to include on the request |
 | `json` | `Boolean` | `true` | if `true`, assumes [json-formatted](#json-by-default) request and response |
 | `jwt` | `String` | | [json web token](https://jwt.io/) to include in the `Authorization` header |
 | `method` | `String` | `GET` | must be a valid `http` request method |
+| `query` | `Object` | | data to serialize and append to the url as a query string |
 | `serialize` | `Function` | [`JSON.parse`](http://devdocs.io/javascript/global_objects/json/parse) | function with which to serialize the request body |
 | `stream` | `Boolean` | `false` | if `true`, the response `body` will be a [`stream.Readable`](http://devdocs.io/node/stream#stream_class_stream_readable) |
+| `timeout` | `Number` | `0` (never) | milliseconds before the [request times out](https://devdocs.io/node/http#http_request_settimeout_timeout_callback) |
 | `url` | `String` | | **required:** the `url` of the request |
-| `query` | `Object` | | data to serialize and append to the url as a query string |
 
 #### `Response` object
 
