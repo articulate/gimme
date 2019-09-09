@@ -14,11 +14,11 @@ const schema = Joi.object({
   json:        Joi.boolean(),
   jwt:         Joi.string(),
   method:      Joi.string().valid(http.METHODS),
+  query:       Joi.object(),
   serialize:   Joi.func(),
   stream:      Joi.boolean(),
   timeout:     Joi.number().integer(),
   url:         Joi.string().required(),
-  query:       Joi.object(),
 })
 
 module.exports = composeP(gimme, validate(schema))
