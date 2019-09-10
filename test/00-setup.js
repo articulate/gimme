@@ -40,6 +40,7 @@ beforeEach(() => {
   nock(url).get('/error').query(true).reply(400)
   nock(url).get('/no-length').query(true).reply(200, { foo: 'bar' })
   nock(url).get('/non-json-error').query(true).reply(400, 'string error')
+  nock(url).get('/timeout').query(true).socketDelay(1500).reply(200)
 })
 
 afterEach(() =>
