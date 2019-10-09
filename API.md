@@ -13,7 +13,7 @@ gimme : { k: v } -> Promise Boom Response
 
 Accepts an object of request params, described below.
 
-Returns a [`Promise`](http://devdocs.io/javascript/global_objects/promise) that either resolves with a [`Response`](#response-object), or rejects with an appropriate [`Boom`](https://www.npmjs.com/package/boom) error for the status code of the response.
+Returns a [`Promise`](http://devdocs.io/javascript/global_objects/promise) that either resolves with a [`Response`](#response-object), or rejects with an appropriate [`Boom`](https://www.npmjs.com/package/boom) error for the status code of the response & a `cry` property to assist with error reporting.
 
 The following params are accepted:
 
