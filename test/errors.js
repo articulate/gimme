@@ -21,6 +21,7 @@ describe('errors', () => {
       expect(res().isBoom).to.be.true
       expect(res().output.statusCode).to.equal(400)
       expect(res().data.res.body).to.equal('string error')
+      expect(res().cry).to.equal(true)
     })
   })
 
@@ -33,6 +34,7 @@ describe('errors', () => {
       expect(res()).to.be.a('Error')
       expect(res().isBoom).to.be.true
       expect(res().output.statusCode).to.equal(400)
+      expect(res().cry).to.equal(true)
     })
   })
 })
